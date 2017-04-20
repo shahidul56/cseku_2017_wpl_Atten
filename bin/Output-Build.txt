@@ -1,0 +1,3 @@
+﻿1>------ Build started: Project: ImageProcessingAttendance, Configuration: Debug x86 ------
+1>  ImageProcessingAttendance -> E:\EDUCATION\THEIRD YEAR\3rd year 2nd term\LAB\CSE-Web Programming Project-3200\FaceRecProOV (1)\FaceRecProOV\FaceRecProOV\FaceRecProOV\bin\Debug\MultiFaceRec.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
