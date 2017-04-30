@@ -1,23 +1,6 @@
 <?php
-/**
-* A class for reading Microsoft Excel Spreadsheets. It supports both xls and xlsx types.
-*
-* Originally developed by Vadim Tkachenko under the name PHPExcelReader.
-* ( http://sourceforge.net/projects/phpexcelreader )
-* Based on the Java version by Andy Khan (http://www.andykhan.com).  Now
-* maintained by David Sanders.  Reads only Biff 7 and Biff 8 formats.
-* Changed the code from PHP 4 to PHP 5 :   CoursesWeb ( http://coursesweb.net/ )
-*
-* PHP versions 5.3
-*
-* @category   Spreadsheet
-* @package    Spreadsheet_Excel_Reader
-* @author     Vadim Tkachenko <vt@apachephp.com>
-* @license    http://www.php.net/license/3_0.txt  PHP License 3.0
-* @version    CVS: $Id: reader.php 19 2007-03-13 12:42:41Z shangxiao $
-* @link       http://pear.php.net/package/Spreadsheet_Excel_Reader
-* @see        OLE, Spreadsheet_Excel_Writer
-*/
+
+
 
 
 require_once 'oleread.inc';
