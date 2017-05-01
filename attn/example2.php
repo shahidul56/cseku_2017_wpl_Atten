@@ -1,21 +1,21 @@
 <?php
-// A complex example that shows excel worksheets data appropiate to excel file
+
 
 $excel_file = "test.xls";
-$sheet_data = '';         // to store html tables with excel data, added in page
-$table_output = array();  // store tables with worksheets data
+$sheet_data = '';         
+$table_output = array();  
 
-$max_rows = 0;        // USE 0 for no max
-$max_cols = 8;        // USE 0 for no max
-$force_nobr = 0;      // USE 1 to Force the info in cells Not to wrap unless stated explicitly (newline)
+$max_rows = 0;        
+$max_cols = 8;        
+$force_nobr = 0;      
 
-require_once 'excel_reader.php';       // include the class
+require_once 'excel_reader.php';       
 $excel = new PhpExcelReader();
-$excel->setOutputEncoding('UTF-8');     // sets encoding UTF-8 for output data
-$excel->read($excel_file);       // read excel file data
-$nr_sheets = count($excel->sheets);       // gets the number of worksheets
+$excel->setOutputEncoding('UTF-8');     
+$excel->read($excel_file);       
+$nr_sheets = count($excel->sheets);       
 
-// function used to add A, B, C, ... for columns (like in excel)
+
 function make_alpha_from_numbers($number) {
   $numeric = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   if($number<strlen($numeric)) return $numeric[$number];
@@ -25,7 +25,7 @@ function make_alpha_from_numbers($number) {
   }
 }
 
-// create html table data
+
 for($sheet=0;$sheet<$nr_sheets;$sheet++) {
   $table_output[$sheet] = '<table class="table_body"><tr><td>&nbsp;</td>';
   for($i=0;$i<$excel->sheets[$sheet]['numCols']&&($i<=$max_cols||$max_cols==0);$i++)  {
@@ -81,7 +81,7 @@ for($sheet=0;$sheet<$nr_sheets;$sheet++) {
   $sheet_data .= '<div class="hide_div" id="sheet_div_'. $sheet .'">'. $table_output[$sheet] ."</div>\n";
 }
 
-// Tabs witth WorkSheets Name
+
 $sheet_tabs = '<table class="table_body" name="tab_table"><tr>';
 for($sheet=0;$sheet<$nr_sheets;$sheet++) {
   $sheet_tabs .= '<td class="tab_base" id="sheet_tab_'. $sheet .'" onclick="changeWSTabs('. $sheet .');">'. $excel->boundsheets[$sheet]['name'] .'</td>';
@@ -132,12 +132,12 @@ $sheet_tabs .= '<tr></table>';
 </style>
 </head><body>
 <?php
-// adds tabs and Divs with tables with worksheets data
+
 echo $sheet_tabs;
 echo $sheet_data;
 ?>
 <script>
-// shows the Div with worksheet content according to clicked tab
+
 function changeWSTabs(sheet) {
   for(i=0; i< <?php echo $nr_sheets; ?>; i++) {
     document.getElementById('sheet_tab_' + i).className = 'tab_base';
@@ -147,7 +147,7 @@ function changeWSTabs(sheet) {
   document.getElementById('sheet_div_' + sheet).className = 'show_div';
 }
 
-// displays the first sheet 
+
 changeWSTabs(0);
 </script>
 </body>
